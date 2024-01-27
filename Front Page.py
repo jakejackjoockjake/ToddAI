@@ -1,7 +1,3 @@
+from taipy import Gui
 
-
-md_page = Markdown("""
-# Page title
-
-Any [*Markdown*](https://en.wikipedia.org/wiki/Markdown) content can be used here.
-""")
+Gui (page = "Hello World *Taipy*").run(dark_mode=False)
