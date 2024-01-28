@@ -5,11 +5,11 @@ import requests
 from gtts import gTTS
 import os
 
-API_KEY = "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"
+
 
 def generateStory(classes): 
 
-  client = OpenAI(api_key=API_KEY)
+  client = OpenAI(API_KEY=API_KEY)
 
   response = client.chat.completions.create(
     model="gpt-3.5-turbo",
