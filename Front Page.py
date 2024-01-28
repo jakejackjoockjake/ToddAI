@@ -30,11 +30,17 @@ def submit_scenario(state):
     state.message = scenario.message.read()
 
 page = """
+
+Drop Down List:
+<|{value}|selector|lov=background; aeroplane; bicycle; bird; boat; bottle; bus; car; cat; chair; cow; diningtable; dog; horse; motorbike; person; pottedplant; sheep;sofa; train; tvmonitor|dropdown|>
+
 Name: <|{input_name}|input|>
 
 <|submit|button|on_action=submit_scenario|>
 
 Message: <|{message}|text|>
+
+
 """
 
 if __name__ == "__main__":
