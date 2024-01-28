@@ -1,4 +1,7 @@
 body {
+  height: 1000px;
+  font-family: Inter, Arial;
+  color: white;
   background: rgb(100, 92, 113);
   background: linear-gradient(
     0deg,
@@ -6,4 +9,7 @@ body {
     rgba(47, 46, 49, 1) 43%,
     rgba(47, 46, 49, 1) 100%
   );
+  margin: 0;
+  padding: 0;
+}
 }
