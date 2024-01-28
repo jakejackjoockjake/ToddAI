@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <title>Camera Feed</title>
     <h1>Title</h1>
-    <link rel="stylesheet" href="ai&cam.css" />
+    <style>
+    body {background-color: rgb(100, 92, 113);}
+    background: linear-gradient(
+    0deg,
+    rgba(100, 92, 113, 1) 0%,
+    rgba(47, 46, 49, 1) 43%,
+    rgba(47, 46, 49, 1) 100%
+    );
+    </style>
 </head>
 <body>
+    
     <h2>
         <form method="post" action="{{ url_for('generate_story') }}">
             <label for="items">Show a picture of one of these items:</label>
