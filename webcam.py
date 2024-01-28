@@ -1,5 +1,14 @@
 import cv2
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
+from openai import OpenAI
+from pathlib import Path
+from dotenv import load_dotenv
+from gtts import gTTS
+import os
+
+load_dotenv()
+
+API_KEY = "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"
 
 app = Flask(__name__)
 
@@ -56,6 +65,23 @@ def generate_frames():
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # Provide the frame to the browser
 
+def generateStory(item):
+    client = OpenAI(api_key=API_KEY)
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": f"Write a 200 word fairytale story about a {item}. The primary audience of this story is for children."},
+        ]
+    )
+    aiResponse = response.choices[0].message.content
+    return aiResponse
+
+def generateTextToSpeech(prompt):
+    myText = prompt
+    language = 'en'
+    myobj = gTTS(text=myText, lang=language, slow=False)
+    myobj.save("audio/output.mp3")
+
 @app.route('/')
 def home():
     return render_template('ai&cam.html')
@@ -63,6 +89,12 @@ def home():
 @app.route('/video')
 def video():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/generate_story', methods=['POST'])
+def generate_story():
+    selected_item = request.form['items']
+    generated_story = generateStory(selected_item)
+    return render_template('ai&cam.html', generated_story=generated_story)
 
 if __name__ == '__main__':
     app.run(debug=True)

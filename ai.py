@@ -1,11 +1,11 @@
 from openai import OpenAI
 from pathlib import Path
 from dotenv import load_dotenv
-import os
 import requests
+from gtts import gTTS
+import os
 
-API_KEY = os.getenv("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")
-XI_API_KEY = os.getenv("be02680fb61d7c65edb047fde0b7a3cb")
+API_KEY = "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"
 
 def generateStory(classes): 
 
@@ -20,29 +20,11 @@ def generateStory(classes):
 
   aiResponse = response.choices[0].message.content
 
-  return aiResponse
-
+  return
 def generateTextToSpeech(prompt):
-  CHUNK_SIZE = 1024
-  url = "https://api.elevenlabs.io/v1/text-to-speech/oWAxZDx7w5VEj9dCyTzz"
+  myText = prompt
+  language = 'en'
 
-  headers = {
-    "Accept": "audio/mpeg",
-    "Content-Type": "application/json",
-    "xi-api-key": XI_API_KEY
-  }
+  myobj = gTTS(text=myText, lang=language, slow=False)
 
-  data = {
-    "text": prompt,
-    "model_id": "eleven_monolingual_v1",
-    "voice_settings": {
-      "stability": 0.5,
-      "similarity_boost": 0.5
-    }
-  }
-
-  response = requests.post(url, json=data, headers=headers)
-  with open('audio/speechoutput.mp3', 'wb') as f:
-      for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-          if chunk:
-              f.write(chunk)
+  myobj.save("audio/output.mp3")
