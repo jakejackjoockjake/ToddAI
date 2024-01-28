@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 import os
 import requests
 
-API_KEY = os.getenv("API_KEY")
-XI_API_KEY = os.getenv("XI_API_KEY")
+API_KEY = os.getenv("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")
+XI_API_KEY = os.getenv("be02680fb61d7c65edb047fde0b7a3cb")
 
 def generateStory(classes): 
 
