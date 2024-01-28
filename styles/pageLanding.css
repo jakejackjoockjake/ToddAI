@@ -1,0 +1,26 @@
+.try-out-button:hover{
+  color: rgb(7, 149, 255);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.try-out-button {
+  border: none; 
+  cursor: pointer; 
+  padding: 20px 30px; 
+  font-size: 24px; 
+  border-radius: 22px; 
+  font-weight: 400;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  
+}
+
+nav{
+  background-color: rgb(35, 34, 36); 
+  display: flex; justify-content: center; vertical-align: middle; padding: 24px 0px; box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.219);
+}
