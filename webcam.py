@@ -1,5 +1,5 @@
 import cv2
-import webbrowser
+
 
 # Load pre-trained MobileNet SSD model
 net = cv2.dnn.readNetFromCaffe(
