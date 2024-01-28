@@ -9,7 +9,7 @@ import os
 
 def generateStory(classes): 
 
-  client = OpenAI(API_KEY=API_KEY)
+  client = OpenAI(api_key=API_KEY)
 
   response = client.chat.completions.create(
     model="gpt-3.5-turbo",

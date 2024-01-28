@@ -8,7 +8,6 @@ import os
 
 load_dotenv()
 
-API_KEY = "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"
 
 app = Flask(__name__)
 
