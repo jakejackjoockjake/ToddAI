@@ -1,8 +1,11 @@
 from openai import OpenAI
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 import requests
 
-API_KEY = "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"
+API_KEY = os.getenv("API_KEY")
+XI_API_KEY = os.getenv("XI_API_KEY")
 
 def generateStory(classes): 
 
@@ -26,7 +29,7 @@ def generateTextToSpeech(prompt):
   headers = {
     "Accept": "audio/mpeg",
     "Content-Type": "application/json",
-    "xi-api-key": "be02680fb61d7c65edb047fde0b7a3cb"
+    "xi-api-key": XI_API_KEY
   }
 
   data = {
@@ -43,5 +46,3 @@ def generateTextToSpeech(prompt):
       for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
           if chunk:
               f.write(chunk)
-
-generateTextToSpeech(generateStory("twinklebell"))
