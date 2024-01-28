@@ -4,18 +4,8 @@
     <meta charset="UTF-8">
     <title>Camera Feed</title>
     <h1>Title</h1>
-    <style>
-    body {background-color: rgb(100, 92, 113);}
-    background: linear-gradient(
-    0deg,
-    rgba(100, 92, 113, 1) 0%,
-    rgba(47, 46, 49, 1) 43%,
-    rgba(47, 46, 49, 1) 100%
-    );
-    </style>
 </head>
 <body>
-    
     <h2>
         <form method="post" action="{{ url_for('generate_story') }}">
             <label for="items">Show a picture of one of these items:</label>
@@ -41,9 +31,8 @@
                 <option value="train">Train</option>
                 <option value="tvmonitor">TV Monitor</option>
             </select>
-            <input type="submit" value="Generate Story">
-        </form>
-    </h2>
+          <input type="submit" value="Generate Story">
+    </form>
 
     <div>
         <img src="{{url_for('video')}}" width="50%"/>
@@ -52,9 +41,18 @@
     <div>
         <h3>Generated Story:</h3>
         <p>
-            <iframe src="https://giphy.com/embed/lTFoYdCiKbt0XU2ofv" width="10%" height="10%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            {{ generated_story }}
+            {{ generated_story | safe }}
         </p>
     </div>
+
+    <button onclick="readGeneratedStory()">Read Story Aloud</button>
+
+    <script>
+        function readGeneratedStory() {
+            var generatedStory = document.querySelector('div p').innerText;
+            var utterance = new SpeechSynthesisUtterance(generatedStory);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
 </body>
 </html>

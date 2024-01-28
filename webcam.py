@@ -5,9 +5,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 from gtts import gTTS
 import os
+import pyttsx3
+
 
 load_dotenv()
 
+API_KEY = "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"
 
 app = Flask(__name__)
 
@@ -75,12 +78,6 @@ def generateStory(item):
     aiResponse = response.choices[0].message.content
     return aiResponse
 
-def generateTextToSpeech(prompt):
-    myText = prompt
-    language = 'en'
-    myobj = gTTS(text=myText, lang=language, slow=False)
-    myobj.save("audio/output.mp3")
-
 @app.route('/')
 def home():
     return render_template('ai&cam.html')
@@ -89,11 +86,20 @@ def home():
 def video():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+def text_to_speech(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
+
 @app.route('/generate_story', methods=['POST'])
 def generate_story():
     selected_item = request.form['items']
     generated_story = generateStory(selected_item)
+    text_to_speech(generated_story)  # Add this line to convert text to speech
     return render_template('ai&cam.html', generated_story=generated_story)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
