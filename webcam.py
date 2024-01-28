@@ -10,7 +10,7 @@ import pyttsx3
 
 load_dotenv()
 
-API_KEY = "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"
+api_key = os.environ.get('API_Key')
 
 app = Flask(__name__)
 
