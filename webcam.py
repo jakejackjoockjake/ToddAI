@@ -2,7 +2,7 @@ import cv2
 from flask import Flask, render_template, Response, request
 from openai import OpenAI
 from pathlib import Path
-from dotenv import load_dotenv
+from dotenv import load_dotenv, dotenv_values
 from gtts import gTTS
 import os
 import pyttsx3
@@ -10,7 +10,6 @@ import pyttsx3
 
 load_dotenv()
 
-api_key = os.environ.get('API_Key')
 
 app = Flask(__name__)
 
@@ -68,7 +67,7 @@ def generate_frames():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # Provide the frame to the browser
 
 def generateStory(item):
-    client = OpenAI(api_key=API_KEY)
+    client = OpenAI(api_key=os.getenv("API_KEY"))
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
