@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36d520d5-802a-4b7f-b811-d65141e1145d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/output.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/audio/output.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ai&amp;cam.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ai&amp;cam.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/webcam.py" afterDir="false" />
     </list>
@@ -67,6 +67,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ToddAI$ai.coverage" NAME="ai Coverage Results" MODIFIED="1706429836635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ToddAI$webcam.coverage" NAME="webcam Coverage Results" MODIFIED="1706435779930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ToddAI$webcam.coverage" NAME="webcam Coverage Results" MODIFIED="1706452561082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
