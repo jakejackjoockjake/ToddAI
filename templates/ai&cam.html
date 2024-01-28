@@ -6,8 +6,38 @@
     <h1>Title</h1>
 </head>
 <body>
+<h2><label for="items">Show a picture of one of these items:</label>
+        <select name="items" id="items">
+            <option value="background">Background</option>
+            <option value="aeroplane">Aeroplane</option>
+            <option value="bicycle">Bicycle</option>
+            <option value="bird">Bird</option>
+            <option value="boat">Boat</option>
+            <option value="bottle">Bottle</option>
+            <option value="bus">Bus</option>
+            <option value="car">Car</option>
+            <option value="cat">Cat</option>
+            <option value="chair">Chair</option>
+            <option value="cow">Cow</option>
+            <option value="diningtable">Dining Table</option>
+            <option value="dog">Dog</option>
+            <option value="horse">Horse</option>
+            <option value="motorbike">Motor Bike</option>
+            <option value="person">Person</option>
+            <option value="pottedplant">Potted Plant</option>
+            <option value="sheep">Sheep</option>
+            <option value="sofa">Sofa</option>
+            <option value="train">Train</option>
+            <option value="tvmonitor">Tv Monitor</option>
+        </select>
+    </h2>
+
     <div>
         <img src="{{url_for('video')}}" width="50%"/>
+    </div>
+
+    <div>
+        <iframe src="https://giphy.com/embed/lTFoYdCiKbt0XU2ofv" width="10%" height="10%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
 
 </body>
