@@ -71,7 +71,7 @@ def generateStory(item):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": f"Write a 200 word fairytale story about a {item}. The primary audience of this story is for children."},
+            {"role": "system", "content": f"Write a 100 word fairytale story about a {item}. The primary audience of this story is for children."},
         ]
     )
     aiResponse = response.choices[0].message.content
