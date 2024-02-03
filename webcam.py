@@ -67,7 +67,8 @@ def generate_frames():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # Provide the frame to the browser
 
 def generateStory(item):
-    client = OpenAI(api_key=os.getenv("API_KEY"))
+    API_KEY = "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"
+    client = OpenAI(api_key=API_KEY)
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
